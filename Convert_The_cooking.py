@@ -55,7 +55,7 @@ def CF():
 
 def CC():
     global equation_text
-    total = round((int(entry_1.get())/2)**2 * math.pi / (int(entry_3.get())/2)**2 * math.pi)
+    total = round(((int(entry_1.get())/2)**2 * math.pi) / ((int(entry_3.get())/2)**2 * math.pi), 2)
     equation_label.set(total)
     equation_text = str(total)
 
@@ -67,13 +67,13 @@ def SS():
 
 def CS():
     global equation_text
-    total = round((int(entry_1.get())/2)**2 * math.pi / (int(entry_2.get())/2)**2 * math.pi)
+    total = round( (int(entry_1.get())*int(entry_2.get())) / ((int(entry_3.get())/2)**2 * math.pi), 2)
     equation_label.set(total)
     equation_text = str(total)
 
 def SC():
     global equation_text
-    total = round((int(entry_1.get())) / (int(entry_2.get())))
+    total = round(((int(entry_1.get())/2)**2 * math.pi / (int(entry_3.get())*int(entry_4.get()))), 2)
     equation_label.set(total)
     equation_text = str(total)
 
@@ -95,19 +95,19 @@ Text1.grid(row=0,column=0, padx=(0,150))
 Text2 = Label(frame1,text="baking form:",font = "Arial 12 bold italic", bg = '#FFF0F5',height=1, width=20)
 Text2.grid(row=0,column=1)
 
-Text3 = Label(frame2_5,text="Recipe's diameter or length (cm):",font = "Arial 8 bold italic", bg = '#FFF0F5',height=1, width=30)
+Text3 = Label(frame2_5,text="Your diameter or length (cm):",font = "Arial 8 bold italic", bg = '#FFF0F5',height=1, width=30)
 Text3.grid(row=0,column=0)
 entry_1 = tkinter.Entry(frame2_5)
 entry_1.grid(row=0, column=1)
-Text4 = Label(frame2_5,text="Recipe's width (cm):",font = "Arial 8 bold italic", bg = '#FFF0F5',height=1, width=30)
+Text4 = Label(frame2_5,text="Your width (cm):",font = "Arial 8 bold italic", bg = '#FFF0F5',height=1, width=30)
 Text4.grid(row=1,column=0)
 entry_2 = tkinter.Entry(frame2_5)
 entry_2.grid(row=1,column=1)
-Text5 = Label(frame2_5,text="Your diameter or length (cm):",font = "Arial 8 bold italic", bg = '#FFF0F5',height=1, width=30)
+Text5 = Label(frame2_5,text="Recipe's diameter or length (cm):",font = "Arial 8 bold italic", bg = '#FFF0F5',height=1, width=30)
 Text5.grid(row=2,column=0)
 entry_3 = tkinter.Entry(frame2_5)
 entry_3.grid(row=2,column=1)
-Text6 = Label(frame2_5,text="Your width (cm):",font = "Arial 8 bold italic", bg = '#FFF0F5',height=1, width=30)
+Text6 = Label(frame2_5,text="Recipe's width (cm):",font = "Arial 8 bold italic", bg = '#FFF0F5',height=1, width=30)
 Text6.grid(row=3,column=0)
 entry_4 = tkinter.Entry(frame2_5)
 entry_4.grid(row=3,column=1)
@@ -125,6 +125,7 @@ form3 = Button(frame3, text = "O" + chr(0x2192) + "O", height=4, width=9, font=3
 form3.grid(row=1,column=2, padx=(180,0)) 
 form4 = Button(frame3, text = "O" + chr(0x2192) + chr(0x2610), height=4, width=9, font=35, bg='white', command = CS)
 form4.grid(row=1,column=3) 
+
 
 
 clears = Button(frame4, text = "Delete", height=4, width=19, font=35, bg='white', command = clear)
