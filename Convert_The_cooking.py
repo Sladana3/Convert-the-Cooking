@@ -31,7 +31,7 @@ def clear():
 
 window = Tk()
 window.title("Calculator program")
-window.geometry("600x600")
+window.geometry("600x800")
 window.configure(background='#FFF0F5')
 
 equation_text = ""
@@ -163,10 +163,25 @@ Unit11.grid(row=3,column=2)
 Unit12 = Button(frame3_2, text = "L" + chr(0x2192) + "dL ", height=1, width=6, font=35, bg='white', command = cdL)
 Unit12.grid(row=3,column=3) 
 
-
+Unit13 = Button(frame4, text = "cup" + chr(0x2192) + "?", height=4, width=9, font=35, bg='white', command = SS)
+Unit13.grid(row=0,column=0) 
+Unit14 = Button(frame4, text = "pound" + chr(0x2192) + "?", height=4, width=9, font=35, bg='white', command = SC)
+Unit14.grid(row=0,column=1) 
+Unit15 = Button(frame4, text = "ounce" + chr(0x2192) + "?", height=4, width=9, font=35, bg='white', command = CC)
+Unit15.grid(row=0,column=2) 
+Unit16 = Button(frame4, text = "pint" + chr(0x2192) + "?", height=4, width=9, font=35, bg='white', command = CS)
+Unit16.grid(row=0,column=3) 
+Unit17 = Button(frame4, text = "fl oz" + chr(0x2192) + "?", height=4, width=9, font=35, bg='white', command = SS)
+Unit17.grid(row=1,column=0) 
+Unit18 = Button(frame4, text = "?" + chr(0x2192) + "?", height=4, width=9, font=35, bg='white', command = SC)
+Unit18.grid(row=1,column=1) 
+Unit19 = Button(frame4, text = "?" + chr(0x2192) + "?", height=4, width=9, font=35, bg='white', command = CC)
+Unit19.grid(row=1,column=2) 
+Unit20 = Button(frame4, text = "?" + chr(0x2192) + "?", height=4, width=9, font=35, bg='white', command = CS)
+Unit20.grid(row=1,column=3) 
 
 clears = Button(frame5, text = "Delete", height=4, width=19, font=35, bg='white', command = clear)
-clears.grid(row=0,column=1) 
+clears.grid(row=0,column=1, pady=(0,50)) 
 
 display1 = ImageTk.PhotoImage(Image.open('Food1.png'))
 label1 = Label(frame5, image=display1, bg = '#FFF0F5')
