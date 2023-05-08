@@ -3,6 +3,7 @@ import tkinter
 import math
 from PIL import ImageTk, Image 
 
+############### Stetup ###############
 def button_press(num):
     global equation_text
     equation_text = equation_text + str(num)
@@ -41,48 +42,128 @@ equation_label = StringVar()
 label = Label(window, textvariable=equation_label, font=('consolas', 20), bg="white", width=24, height=2)
 label.pack(pady=(30,0))
 
+############### Definitions ###############
 def FC():
     global equation_text
-    total = round((int(equation_text) - 32) * 5/9, 2)
+    total = round((float(equation_text) - 32) * 5/9, 2)
     equation_label.set(total)
     equation_text = str(total)
 
 def CF():
     global equation_text
-    total = round(int(equation_text) * 9/5 + 32, 2)
+    total = round(float(equation_text) * 9/5 + 32, 2)
     equation_label.set(total)
     equation_text = str(total)
 
 def CC():
     global equation_text
-    total = round(((int(entry_1.get())/2)**2 * math.pi) / ((int(entry_3.get())/2)**2 * math.pi), 2)
+    total = round(((float(entry_1.get())/2)**2 * math.pi) / ((float(entry_3.get())/2)**2 * math.pi), 2)
     equation_label.set(total)
     equation_text = str(total)
 
 def SS():
     global equation_text
-    total = round((int(entry_1.get())*int(entry_2.get()))/(int(entry_3.get())*int(entry_4.get())), 2)
+    total = round((float(entry_1.get())*float(entry_2.get()))/(float(entry_3.get())*float(entry_4.get())), 2)
     equation_label.set(total)
     equation_text = str(total)
 
 def CS():
     global equation_text
-    total = round( (int(entry_1.get())*int(entry_2.get())) / ((int(entry_3.get())/2)**2 * math.pi), 2)
+    total = round( (float(entry_1.get())*float(entry_2.get())) / ((float(entry_3.get())/2)**2 * math.pi), 2)
     equation_label.set(total)
     equation_text = str(total)
 
 def SC():
     global equation_text
-    total = round(((int(entry_1.get())/2)**2 * math.pi / (int(entry_3.get())*int(entry_4.get()))), 2)
+    total = round(((float(entry_1.get())/2)**2 * math.pi / (float(entry_3.get())*float(entry_4.get()))), 2)
     equation_label.set(total)
     equation_text = str(total)
 
-def cdL():
+def DTen():
     global equation_text
-    total = round(int(equation_text) / 100 , 2)
+    total = round(float(equation_text) / 10 , 2)
     equation_label.set(total)
     equation_text = str(total)
 
+def DH():
+    global equation_text
+    total = round(float(equation_text) / 100 , 2)
+    equation_label.set(total)
+    equation_text = str(total)
+
+def DT():
+    global equation_text
+    total = round(float(equation_text) / 1000 , 2)
+    equation_label.set(total)
+    equation_text = str(total)
+
+def MTen():
+    global equation_text
+    total = round(float(equation_text) * 10 , 2)
+    equation_label.set(total)
+    equation_text = str(total)
+
+def MH():
+    global equation_text
+    total = round(float(equation_text) * 100 , 2)
+    equation_label.set(total)
+    equation_text = str(total)
+
+def MT():
+    global equation_text
+    total = round(float(equation_text) * 1000 , 2)
+    equation_label.set(total)
+    equation_text = str(total)
+
+def Cup():
+    global equation_text
+    total = round(float(equation_text) * 236.588237, 2)
+    equation_label.set(total)
+    equation_text = str(total)
+
+def Pound():
+    global equation_text
+    total = round(float(equation_text) * 453.59237, 2)
+    equation_label.set(total)
+    equation_text = str(total)
+
+def Ounce():
+    global equation_text
+    total = round(float(equation_text) * 28.3495231 , 2)
+    equation_label.set(total)
+    equation_text = str(total)
+
+def Pint():
+    global equation_text
+    total = round(float(equation_text) * 473.176473, 2)
+    equation_label.set(total)
+    equation_text = str(total)
+
+def Fl_oz():
+    global equation_text
+    total = round(float(equation_text) * 29.5735296  , 2)
+    equation_label.set(total)
+    equation_text = str(total)
+
+def Stick():
+    global equation_text
+    total = round(float(equation_text) * 113.4, 2)
+    equation_label.set(total)
+    equation_text = str(total)
+
+def Tsp():
+    global equation_text
+    total = round(float(equation_text) * 4.92892159, 2)
+    equation_label.set(total)
+    equation_text = str(total)
+
+def Tbsp():
+    global equation_text
+    total = round(float(equation_text) * 14.7867648, 2)
+    equation_label.set(total)
+    equation_text = str(total)
+
+############### Frames ###############
 frame1 = Frame(window, bg = '#FFF0F5')
 frame1.pack()
 frame2 = Frame(window, bg = '#FFF0F5')
@@ -94,12 +175,13 @@ frame3.pack()
 frame3_1 = Frame(frame3, bg = '#FFF0F5')
 frame3_1.grid(row=0,column=1)
 frame3_2 = Frame(frame3, bg = '#FFF0F5')
-frame3_2.grid(row=0,column=0, padx=(0,90))
+frame3_2.grid(row=0,column=0, padx=(0,106))
 frame4 = Frame(window, bg = '#FFF0F5')
 frame4.pack()
 frame5 = Frame(window, bg = '#FFF0F5')
 frame5.pack()
 
+############### Texts and buttons ###############
 Text1 = Label(frame1,text="Temperatures:",font = "Arial 12 bold italic", bg = '#FFF0F5',height=1, width=12)
 Text1.grid(row=0,column=0, padx=(0,150))
 Text2 = Label(frame1,text="baking form:",font = "Arial 12 bold italic", bg = '#FFF0F5',height=1, width=20)
@@ -138,51 +220,52 @@ form4.grid(row=1,column=2)
 
 Text7 = Label(frame3_2,text="Units:",font = "Arial 12 bold italic", bg = '#FFF0F5',height=1, width=6)
 Text7.grid(row=0,column=0)
-Unit1 = Button(frame3_2, text = "mL" + chr(0x2192) + "cL", height=1, width=6, font=35, bg='white', command = cdL)
+Unit1 = Button(frame3_2, text = "mL" + chr(0x2192) + "cL", height=1, width=6, font=35, bg='white', command = DTen)
 Unit1.grid(row=1,column=0) 
-Unit2 = Button(frame3_2, text = "cL" + chr(0x2192) + "mL", height=1, width=6, font=35, bg='white', command = cdL)
+Unit2 = Button(frame3_2, text = "cL" + chr(0x2192) + "mL", height=1, width=6, font=35, bg='white', command = MTen)
 Unit2.grid(row=1,column=1) 
-Unit3 = Button(frame3_2, text = "dL" + chr(0x2192) + "mL", height=1, width=6, font=35, bg='white', command = cdL)
+Unit3 = Button(frame3_2, text = "dL" + chr(0x2192) + "mL", height=1, width=6, font=35, bg='white', command = MH)
 Unit3.grid(row=1,column=2) 
-Unit4 = Button(frame3_2, text = "L" + chr(0x2192) + "mL ", height=1, width=6, font=35, bg='white', command = cdL)
+Unit4 = Button(frame3_2, text = "L" + chr(0x2192) + "mL ", height=1, width=6, font=35, bg='white', command = MT)
 Unit4.grid(row=1,column=3) 
-Unit5 = Button(frame3_2, text = "mL" + chr(0x2192) + "dL", height=1, width=6, font=35, bg='white', command = cdL)
+Unit5 = Button(frame3_2, text = "mL" + chr(0x2192) + "dL", height=1, width=6, font=35, bg='white', command = DH)
 Unit5.grid(row=2,column=0) 
-Unit6 = Button(frame3_2, text = "cL" + chr(0x2192) + "dL", height=1, width=6, font=35, bg='white', command = cdL)
+Unit6 = Button(frame3_2, text = "cL" + chr(0x2192) + "dL", height=1, width=6, font=35, bg='white', command = DTen)
 Unit6.grid(row=2,column=1) 
-Unit7 = Button(frame3_2, text = "dL" + chr(0x2192) + "cL", height=1, width=6, font=35, bg='white', command = cdL)
+Unit7 = Button(frame3_2, text = "dL" + chr(0x2192) + "cL", height=1, width=6, font=35, bg='white', command = MTen)
 Unit7.grid(row=2,column=2) 
-Unit8 = Button(frame3_2, text = "L" + chr(0x2192) + "cL ", height=1, width=6, font=35, bg='white', command = cdL)
+Unit8 = Button(frame3_2, text = "L" + chr(0x2192) + "cL ", height=1, width=6, font=35, bg='white', command = MH)
 Unit8.grid(row=2,column=3) 
-Unit9 = Button(frame3_2, text = "mL" + chr(0x2192) + "L ", height=1, width=6, font=35, bg='white', command = cdL)
+Unit9 = Button(frame3_2, text = "mL" + chr(0x2192) + "L ", height=1, width=6, font=35, bg='white', command = DT)
 Unit9.grid(row=3,column=0) 
-Unit10 = Button(frame3_2, text = "cL" + chr(0x2192) + "L ", height=1, width=6, font=35, bg='white', command = cdL)
+Unit10 = Button(frame3_2, text = "cL" + chr(0x2192) + "L ", height=1, width=6, font=35, bg='white', command = DH)
 Unit10.grid(row=3,column=1) 
-Unit11 = Button(frame3_2, text = "dL" + chr(0x2192) + "L ", height=1, width=6, font=35, bg='white', command = cdL)
+Unit11 = Button(frame3_2, text = "dL" + chr(0x2192) + "L ", height=1, width=6, font=35, bg='white', command = DTen)
 Unit11.grid(row=3,column=2) 
-Unit12 = Button(frame3_2, text = "L" + chr(0x2192) + "dL ", height=1, width=6, font=35, bg='white', command = cdL)
+Unit12 = Button(frame3_2, text = "L" + chr(0x2192) + "dL ", height=1, width=6, font=35, bg='white', command = MTen)
 Unit12.grid(row=3,column=3) 
 
-Unit13 = Button(frame4, text = "cup" + chr(0x2192) + "?", height=4, width=9, font=35, bg='white', command = SS)
+Unit13 = Button(frame4, text = "cup" + chr(0x2192) + "mL", height=4, width=9, font=35, bg='white', command = Cup)
 Unit13.grid(row=0,column=0) 
-Unit14 = Button(frame4, text = "pound" + chr(0x2192) + "?", height=4, width=9, font=35, bg='white', command = SC)
+Unit14 = Button(frame4, text = "pound" + chr(0x2192) + "g", height=4, width=9, font=35, bg='white', command = Pound)
 Unit14.grid(row=0,column=1) 
-Unit15 = Button(frame4, text = "ounce" + chr(0x2192) + "?", height=4, width=9, font=35, bg='white', command = CC)
+Unit15 = Button(frame4, text = "ounce" + chr(0x2192) + "g", height=4, width=9, font=35, bg='white', command = Ounce)
 Unit15.grid(row=0,column=2) 
-Unit16 = Button(frame4, text = "pint" + chr(0x2192) + "?", height=4, width=9, font=35, bg='white', command = CS)
+Unit16 = Button(frame4, text = "pint" + chr(0x2192) + "mL", height=4, width=9, font=35, bg='white', command = Pint)
 Unit16.grid(row=0,column=3) 
-Unit17 = Button(frame4, text = "fl oz" + chr(0x2192) + "?", height=4, width=9, font=35, bg='white', command = SS)
+Unit17 = Button(frame4, text = "fl oz" + chr(0x2192) + "mL", height=4, width=9, font=35, bg='white', command = Fl_oz)
 Unit17.grid(row=1,column=0) 
-Unit18 = Button(frame4, text = "?" + chr(0x2192) + "?", height=4, width=9, font=35, bg='white', command = SC)
+Unit18 = Button(frame4, text = "stick" + chr(0x2192) + "g", height=4, width=9, font=35, bg='white', command = Stick)
 Unit18.grid(row=1,column=1) 
-Unit19 = Button(frame4, text = "?" + chr(0x2192) + "?", height=4, width=9, font=35, bg='white', command = CC)
+Unit19 = Button(frame4, text = "tsp" + chr(0x2192) + "mL", height=4, width=9, font=35, bg='white', command = Tsp)
 Unit19.grid(row=1,column=2) 
-Unit20 = Button(frame4, text = "?" + chr(0x2192) + "?", height=4, width=9, font=35, bg='white', command = CS)
+Unit20 = Button(frame4, text = "tbsp" + chr(0x2192) + "mL", height=4, width=9, font=35, bg='white', command = Tbsp)
 Unit20.grid(row=1,column=3) 
 
 clears = Button(frame5, text = "Delete", height=4, width=19, font=35, bg='white', command = clear)
-clears.grid(row=0,column=1, pady=(0,50)) 
+clears.grid(row=0,column=1, pady=(0,50), padx=(0,12)) 
 
+############### Pictures ###############
 display1 = ImageTk.PhotoImage(Image.open('Food1.png'))
 label1 = Label(frame5, image=display1, bg = '#FFF0F5')
 label1.grid(row=1,column=0) 
@@ -193,6 +276,7 @@ display = ImageTk.PhotoImage(Image.open('Name.png'))
 label = Label(frame5, image=display, bg = '#FFF0F5')
 label.grid(row=1,column=1) 
 
+############### shortcuts ###############
 window.bind("1", lambda e:button_press(1))
 window.bind("2", lambda e:button_press(2))
 window.bind("3", lambda e:button_press(3))
